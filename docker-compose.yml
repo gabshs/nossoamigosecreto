@@ -25,6 +25,12 @@ services:
       - .:/nosso_amigo_secreto
     volumes_from: 
       - box
+
+  mailcatcher:
+    image: yappabe/mailcatcher
+    ports: 
+      - 1025:1025
+      - 1080:1080
   
   website:
     depends_on: 
