@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     # post 'raffle', on: :collection para a rota campaigns/raffle
   end
   get 'members/:token/opened', to: 'members#opened'
-  resources :members, only: [:create, :upgrade, :destroy]
+  resources :members, only: [:create, :update, :destroy]
 end
