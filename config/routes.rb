@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   root 'pages#home'
-  resources :campaigns, except :new do
+  resources :campaigns, except: :new do
     post 'raffle', on: :member
     # campaigns/:id/raffle
     # post 'raffle', on: :collection para a rota campaigns/raffle

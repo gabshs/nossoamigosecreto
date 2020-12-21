@@ -39,7 +39,7 @@ describe RaffleService do
 
         context "when don't has more then two members" do
             before(:each) do
-                create(:member, campaign: @campaign).call
+                create(:member, campaign: @campaign)
                 @campaign.reload
 
                 @response = RaffleService.new(@campaign).call
