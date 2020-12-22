@@ -79,7 +79,7 @@ RSpec.describe CampaignsController, type: :controller do
     context "User is the Campaign Owner" do
       it "returns http success" do
         campaign = create(:campaign, user: @current_user)
-        delete :destroy, params: {id: campaign_id}
+        delete :destroy, params: {id: campaign.id}
         expect(response).to have_http_status(:success)
       end
     end
@@ -87,7 +87,7 @@ RSpec.describe CampaignsController, type: :controller do
     context "User isn`t the Campaign Owner" do
       it "return http forbidden" do
         campaign = create(:campaign)
-        delete :destroy, params: {id: campaign_id}
+        delete :destroy, params: {id: campaign.id}
         expect(response).to have_http_status(:forbidden)
       end
     end
@@ -139,7 +139,7 @@ RSpec.describe CampaignsController, type: :controller do
           create(:member, campaign: @campaign)
           create(:member, campaign: @campaign)
           create(:member, campaign: @campaign)
-          post :rafle, params: {id: @campaign.id}
+          post :raffle, params: {id: @campaign.id}
         end
 
         it "returns http success" do
