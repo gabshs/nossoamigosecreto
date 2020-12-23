@@ -11,6 +11,7 @@ class Campaign < ApplicationRecord
 
   def count_opened
     self.members.where(open: true).count
+  end
 
   def set_status
     self.status = :pending
