@@ -9,6 +9,9 @@ class Campaign < ApplicationRecord
 
   validates :title, :description, :user, :status, presence: true
 
+  def count_opened
+    self.members.where(open: true).count
+
   def set_status
     self.status = :pending
   end
