@@ -10,7 +10,7 @@ class Member < ApplicationRecord
     self.open = false
     self.token = loop do
       random_token = SecureRandom.urlsafe_base64(nil, false)
-      break random_token unless Member.exist?(token: random_token)
+      break random_token unless Member.exists?(token: random_token)
     end
     self.save!
   end
