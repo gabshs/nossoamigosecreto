@@ -98,9 +98,8 @@
     <div class="row btn-actions">
       <div class="col s12 center">
         <div class="col s6 m3 offset-m3 l2 offset-l4">
-          <%= form_for @campaign, method: 'delete', html: {class: 'remove_campaign'} do |f| %>
-            <button type='submit' class="waves-effect waves-light btn grey">Remover</button>
-          <% end %>
+          <a href="#modal1" class="waves-effect waves-light btn grey modal-trigger">Remover</a>
+          
         </div>
         <div class="col s6 m3 l3">
           <%= form_tag(raffle_campaign_path(@campaign), method: 'post', class: 'raffle_campaign') do %>
@@ -110,3 +109,6 @@
       </div>
     </div>
   </div>
+</div>
+
+<%= render 'shared/modal' %>
