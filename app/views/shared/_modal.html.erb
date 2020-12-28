@@ -1,0 +1,12 @@
+<div id="modal1" class="modal">
+<div class="modal-content">
+  <h4>Excluir campanha <%= @campaign.title %></h4>
+  <p>Tem certeza que deseja excluir a campanha <%= @campaign.title %>? </p>
+  <p>Uma vez excluída não é possível restaurar a campanha</p>
+</div>
+<div class="modal-footer">
+    <%= form_for @campaign, html: {class: 'remove_campaign'}, method: 'delete' do |f| %>
+        <button type='submit' class="modal-close waves-effect waves-green btn-flat">Excluir</button>
+    <% end %>
+</div>
+</div>
