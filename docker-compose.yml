@@ -18,7 +18,7 @@ services:
     depends_on: 
       - 'postgres'
       - 'redis'
-      - 'website'
+      - 'app'
     build: .
     command: bash start_jobs
     volumes:
@@ -32,7 +32,7 @@ services:
       - 1025:1025
       - 1080:1080
   
-  website:
+  app:
     depends_on: 
       - 'postgres'
       - 'redis'
