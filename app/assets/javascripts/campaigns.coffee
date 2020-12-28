@@ -34,3 +34,5 @@ $(document).on 'turbolinks:load', ->
             error: (jqXHR, textStatus, errorThrown) ->
                 Materialize.toast(jqXHR.responseText, 4000, 'red')
         return false
+
+    $('.modal').modal()
