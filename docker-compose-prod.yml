@@ -40,6 +40,15 @@ services:
       - box
     env_file: 
       - '.env-prod'
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    links: 
+      - app
+    ports: 
+      - '80:80'
   
   box:
     image: busybox
