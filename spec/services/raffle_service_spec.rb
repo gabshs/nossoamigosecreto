@@ -34,6 +34,17 @@ describe RaffleService do
 
             it "a member x don`t get a member y than get the member x" do
                 # Challenge
+                @results.each do |x|
+                    member_x = x.first
+                    member_y = x.last
+
+                    @results.each do |y|
+                        if y.first == member_y
+                            expect(y.first).not_to eql(member_x)
+                            break
+                        end
+                    end
+                end
             end
         end
 
